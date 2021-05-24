@@ -47,6 +47,7 @@ class Database{
 
         $this->stmt->bindValue($param,$value,$type);
     }
+
     public function execute(){
         $this->stmt->execute();
     }
@@ -57,5 +58,8 @@ class Database{
     public function single(){
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function rowCount(){
+        return $this->stmt->rowCount();
     }
 }
